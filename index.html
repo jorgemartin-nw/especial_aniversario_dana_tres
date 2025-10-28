@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrollytelling Aniversario Dana 2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body { 
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+        aside {
+            width: 100%;
+            max-width: 100%;
+            left: 0;
+            right: 0;
+            padding: 0; 
+        }
+        .chart-container {
+            position: relative;
+            width: 100%; 
+            max-width: 100%;
+            overflow: hidden;
+            margin: 0 auto;
+            height: 100vh; 
+        }
+        .scrolly-image {
+            display: block;
+            width: 100%; 
+            height: 100%; 
+            object-fit: contain; 
+        }
+        @media (min-width: 768px) {
+            aside {
+                padding: 1rem;
+            }
+            .chart-container {
+                max-width: 64rem; 
+                width: 100%; 
+                border-radius: 0.5rem;
+                overflow: hidden;
+                height: auto;
+            }
+            .scrolly-image {
+                height: auto; 
+                width: 100%;
+                object-fit: contain; 
+            }
+        }
+        .step-content {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            will-change: opacity, transform;
+        }
+        .step.is-active .step-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        html, body {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        html::-webkit-scrollbar,
+        body::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+    </style>
+</head>
+<body>
+
+<aside class="fixed top-0 left-0 w-full h-screen z-0 md:grid md:place-items-center">
+    <div class="chart-container">
+        <img id="image-1" 
+             src="https://live.staticflickr.com/65535/54883148013_31317de7c4_b.jpg" 
+             class="scrolly-image opacity-100 z-10 transition-opacity duration-500 ease-in-out" 
+             alt="Imagen Scrollytelling 0"
+             data-step-image="0">
+
+        <img id="image-2" 
+             src="https://live.staticflickr.com/65535/54883171884_3148786a45_b.jpg" 
+             class="scrolly-image absolute top-0 left-0 opacity-0 z-0 transition-opacity duration-500 ease-in-out" 
+             alt="Imagen Scrollytelling 1"
+             data-step-image="1">
+        
+        <img id="image-3" 
+             src="https://live.staticflickr.com/65535/54883171874_43a07f34d2_b.jpg" 
+             class="scrolly-image absolute top-0 left-0 opacity-0 z-0 transition-opacity duration-500 ease-in-out" 
+             alt="Imagen Scrollytelling 2"
+             data-step-image="2">
+
+        <img id="image-4" 
+             src="https://live.staticflickr.com/65535/54882927256_d5a239ec88_b.jpg" 
+             class="scrolly-image absolute top-0 left-0 opacity-0 z-0 transition-opacity duration-500 ease-in-out" 
+             alt="Imagen Scrollytelling 3"
+             data-step-image="3">
+
+        <img id="image-5" 
+             src="https://live.staticflickr.com/65535/54883171889_2fa9d2d487_b.jpg" 
+             class="scrolly-image absolute top-0 left-0 opacity-0 z-0 transition-opacity duration-500 ease-in-out" 
+             alt="Imagen Scrollytelling 4"
+             data-step-image="4">
+
+        <img id="image-6" 
+             src="https://live.staticflickr.com/65535/54882058362_2ba6193547_b.jpg" 
+             class="scrolly-image absolute top-0 left-0 opacity-0 z-0 transition-opacity duration-500 ease-in-out" 
+             alt="Imagen Scrollytelling 5"
+             data-step-image="5">
+
+        <img id="image-7" 
+             src="https://live.staticflickr.com/65535/54883148018_77547e75ca_b.jpg" 
+             class="scrolly-image absolute top-0 left-0 opacity-0 z-0 transition-opacity duration-500 ease-in-out" 
+             alt="Imagen Scrollytelling 6"
+             data-step-image="6">
+
+        <img id="image-8" 
+             src="https://live.staticflickr.com/65535/54882058412_9d8c0813c5_b.jpg" 
+             class="scrolly-image absolute top-0 left-0 opacity-0 z-0 transition-opacity duration-500 ease-in-out" 
+             alt="Imagen Scrollytelling 7"
+             data-step-image="7">
+
+        <img id="image-9" 
+             src="https://live.staticflickr.com/65535/54883171849_3d849016fe_b.jpg" 
+             class="scrolly-image absolute top-0 left-0 opacity-0 z-0 transition-opacity duration-500 ease-in-out" 
+             alt="Imagen Scrollytelling 8"
+             data-step-image="8">
+
+    </div>
+</aside>
+
+<main class="max-w-7xl mx-auto">
+    <article class="relative">
+        <section class="relative w-full z-10 pointer-events-none">
+            
+            <div class="step mb-[80vh] min-h-[70vh] flex flex-col items-center justify-center"
+                 data-image-id="image-1" data-step-index="0">
+            </div>
+
+            <div class="step mb-[80vh] min-h-[70vh] flex flex-col items-center justify-center"
+                 data-image-id="image-2" data-step-index="1">
+                <div class="step-content relative bg-white/80 backdrop-blur-md shadow-lg rounded-lg p-8 mx-4 text-xl leading-relaxed max-w-xl pointer-events-auto">
+                    <p>En la zona de Valencia más afectada por la dana, las áreas inundables en un periodo de retorno de 10 años son las siguientes:</p>
+                </div>
+            </div>
+
+            <div class="step mb-[80vh] min-h-[70vh] flex flex-col items-center justify-center"
+                 data-image-id="image-3" data-step-index="2">
+                <div class="step-content relative bg-white/80 backdrop-blur-md shadow-lg rounded-lg p-8 mx-4 text-xl leading-relaxed max-w-xl pointer-events-auto">
+                    <p>Esto implica que una vez cada 10 años 6.894 edificios de la provincia corren el riesgo de verse afectadas por una inundación.</p>
+                </div>
+            </div>
+
+            <div class="step mb-[80vh] min-h-[70vh] flex flex-col items-center justify-center"
+                 data-image-id="image-4" data-step-index="3">
+                <div class="step-content relative bg-white/80 backdrop-blur-md shadow-lg rounded-lg p-8 mx-4 text-xl leading-relaxed max-w-xl pointer-events-auto">
+                    <p>El Ministerio también da información para periodos de retorno de 100 años.</p>
+                </div>
+            </div>
+
+            <div class="step mb-[30vh] min-h-[70vh] flex flex-col items-center justify-center"
+                 data-image-id="image-5" data-step-index="4">
+                <div class="step-content relative bg-white/80 backdrop-blur-md shadow-lg rounded-lg p-8 mx-4 text-xl leading-relaxed max-w-xl pointer-events-auto">
+                    <p>Y de 500, donde hasta 59.000 edificios se han construido sobre zonas inundables.</p>
+                </div>
+            </div>
+
+            <div class="step mb-[30vh] min-h-[70vh] flex flex-col items-center justify-center"
+                 data-image-id="image-5" data-step-index="4">
+                <div class="step-content relative bg-white/80 backdrop-blur-md shadow-lg rounded-lg p-8 mx-4 text-xl leading-relaxed max-w-xl pointer-events-auto">
+                    <p>Se trata del límite a tener en cuenta a la hora de construir nuevas viviendas para evitar el riesgo de inundación, como establece el <a href="https://www.boe.es/buscar/act.php?id=BOE-A-1986-10638">Reglamento del Dominio Público Hidráulico</a>.</p>
+                </div>
+            </div>
+
+            <div class="step mb-[80vh] min-h-[70vh] flex flex-col items-center justify-center"
+                 data-image-id="image-6" data-step-index="5">
+                <div class="step-content relative bg-white/80 backdrop-blur-md shadow-lg rounded-lg p-8 mx-4 text-xl leading-relaxed max-w-xl pointer-events-auto">
+                    <p>Sin embargo, la magnitud real de la dana fue tal que el área inundada superó la de cualquier tipo de previsión.</p>
+                </div>
+            </div>
+
+            <div class="step mb-[80vh] min-h-[70vh] flex flex-col items-center justify-center"
+                 data-image-id="image-7" data-step-index="6">
+                <div class="step-content relative bg-white/80 backdrop-blur-md shadow-lg rounded-lg p-8 mx-4 text-xl leading-relaxed max-w-xl pointer-events-auto">
+                    <p>Por lo que muchas más viviendas de las esperadas se vieron afectadas por la riada.</p>
+                </div>
+            </div>
+
+            <div class="step mb-[80vh] min-h-[70vh] flex flex-col items-center justify-center"
+                 data-image-id="image-7" data-step-index="6">
+                <div class="step-content relative bg-white/80 backdrop-blur-md shadow-lg rounded-lg p-8 mx-4 text-xl leading-relaxed max-w-xl pointer-events-auto">
+                    <p><b>62.000 edificios</b> se encontraban en las zonas afectadas por las riadas.</p>
+                </div>
+            </div>
+
+            <div class="step mb-[80vh] min-h-[70vh] flex flex-col items-center justify-center"
+                 data-image-id="image-8" data-step-index="7">
+                <div class="step-content relative bg-white/80 backdrop-blur-md shadow-lg rounded-lg p-8 mx-4 text-xl leading-relaxed max-w-xl pointer-events-auto">
+                    <p>La enorme capacidad destructiva de la dana de 2024, fuera de toda previsión, afectó también a otros municipios más al sur de Valencia, como Algemesí, Alberic o Pobla Llarga.</p>
+                </div>
+            </div>
+
+            <div class="step mb-[80vh] min-h-[70vh] flex flex-col items-center justify-center"
+                 data-image-id="image-8" data-step-index="7">
+                <div class="step-content relative bg-white/80 backdrop-blur-md shadow-lg rounded-lg p-8 mx-4 text-xl leading-relaxed max-w-xl pointer-events-auto">
+                    <p>Los edificios marcados podrían verse anegados una vez cada 500 años.</p>
+                </div>
+            </div>
+
+            <div class="step mb-[80vh] min-h-[70vh] flex flex-col items-center justify-center"
+                 data-image-id="image-9" data-step-index="8">
+                <div class="step-content relative bg-white/80 backdrop-blur-md shadow-lg rounded-lg p-8 mx-4 text-xl leading-relaxed max-w-xl pointer-events-auto">
+                    <p>Pero en estos municipios los edificios afectados por la dana sobrepasaron también todo tipo de previsión.</p>
+                </div>
+            </div>
+
+        </section>
+    </article>
+</main>
+
+<script src="script_inundables.js"></script>
+
+</body>
+
+</html>
